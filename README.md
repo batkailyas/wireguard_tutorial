@@ -1,4 +1,3 @@
-# wireguard_tutorial
 # How to setup wireguard on VPC
 
 First of all you need to SSH to your server
