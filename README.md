@@ -104,3 +104,18 @@ Endpoint = SERVER_IP_ADDRESS:PORT
 PersistentKeepalive = 21
 ```
 Put client private key, server pub key and server ip and port instead of temporary variables in the config above.
+
+**To install WireGuard on mobile device use AppStore or Google Play**
+
+For simple VPN configuration on smartphone generate QR code from client config.
+To do that install `qrencode`:
+
+`sudo dnf install qrencode -y`
+
+After installation run following command:
+
+`cat client.conf | qrencode -t UTF8`
+
+You'll get QR like this one:
+
+<img width="209" alt="Screen Shot 2022-11-15 at 22 33 21" src="https://user-images.githubusercontent.com/26440100/201974593-17f8d255-fb2d-4966-88b6-4ebb55c5f43f.png">
