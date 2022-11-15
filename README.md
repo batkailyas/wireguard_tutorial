@@ -77,3 +77,30 @@ Now you are ready to start wireguard:
 `systemctl start wg-quick@wg`
 
 `systemctl enable wg-quick@wg`
+
+
+**How to install and configure client**
+
+If you're using macOS - go to AppStore and download WireGuard
+
+If you're using Fedora use following command:
+`sudo dnf install wireguard-tools`
+
+If you're using Ubuntu go reinstall it to something else :)
+
+When you've installed WireGuard client it's time to configure it. 
+
+Use this template to configure client:
+
+```
+[Interface]
+PrivateKey = CLIENT_PRIVATE_KEY
+Address = 192.168.123.2/32
+
+[Peer]
+PublicKey = SERVER_PUBLIC_KEY
+AllowedIPs = 0.0.0.0/0
+Endpoint = SERVER_IP_ADDRESS:PORT
+PersistentKeepalive = 21
+```
+Put client private key, server pub key and server ip and port instead of temporary variables in the config above.
